@@ -5,8 +5,6 @@ const body_parser = require("body-parser")
 const _ = require("lodash")
 const mongoose = require("mongoose")
 
-const date = require(__dirname + "/date.js")
-
 const app = express()
 
 app.use(express.static("public"))
@@ -19,8 +17,6 @@ app.set("view engine", "ejs")
 const active_icon = "active-icon"
 
 mongoose.connect("mongodb://localhost:27017/todolistDB", {useNewUrlParser: true})
-
-let day = date.getDate()
 
 const itemSchema = {
     name: {
