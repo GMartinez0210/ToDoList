@@ -105,49 +105,6 @@ app.get("/", function(req, res) {
     })
 })
 
-/* 
-app.get("/:lists", function(req, res) {
-    const lists = _.lowerCase(req.params.list)
-
-    if(lists == "work") {
-        Work.find({}, function(err, works){
-            if (err) console.log(err)
-            else res.render("list", {
-                title: "Work",
-                new_items: works,
-                active_home: "",
-                active_work: active_icon
-            })
-        })
-    }
-    else if(lists == "home") {
-        let day = date.getDate()
-
-        Item.find(function(err, items){
-            if (err) console.log(err)
-            else {
-                if (items.length === 0) {
-                    Item.insertMany(defaultItems, function(err){
-                        if (err) console.log(err)
-                        else console.log("Successfully! Default items inserted")
-                    })
-                    res.redirect("/home")
-                }
-                else res.render("list", {
-                        title: day,
-                        new_items: items,
-                        active_home: active_icon,
-                        active_work: ""
-                    })
-            } 
-        })
-    }
-})
- */
-/* app.get("/", function(req, res) {
-    res.redirect("/home")
-}) */
-
 app.post("/", function(req, res) {
     let new_item = req.body.new_item
     let listName = req.body.list
